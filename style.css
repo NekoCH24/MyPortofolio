@@ -1,0 +1,364 @@
+:root {
+    /* background */
+  --bg-main: #0B1220;
+  --bg-secondary: #111B2E;
+
+  /* background untuk navbar */
+  --bg-navbar: rgba(11, 18, 32, 0.8);
+  
+  /* untuk Button */
+  --primary: #3B82F6;
+  --primary-hover: #60A5FA;
+  
+  /* untuk text */
+  --text-main: #E5E7EB;
+  --text-secondary: #9CA3AF;
+
+  /* untuk shadow */
+  --shadow-picture: 0 12px 40px rgba(59, 130, 246, 0.28);
+  --shadow-button: 0 14px 35px rgba(96, 165, 250, 0.35);
+  --shadow-soft: 0 8px 30px rgba(15, 23, 42, 0.55);
+  --shadow-medium: 0 10px 40px rgba(15, 23, 42, 0.7);
+  --shadow-accent: 0 0 18px rgba(59, 130, 246, 0.45);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-main);
+    color: var(--text-main);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 80px;
+}
+/* Navbar */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--bg-navbar);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: var(--shadow-medium);
+}
+
+.navbar ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar li {
+    height: 50px;
+}
+
+.navbar a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--primary-hover);
+    transform: translateY(-1.6px);
+    text-shadow: var(--shadow-medium);
+}
+
+section {
+    min-height: 80vh;
+    padding: 5rem 9% 5rem;
+}
+
+/* Home */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.home-content h3 {
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.home .home-content h1{
+  font-size: 4.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  animation: softGlow 3s ease-in-out infinite;
+}
+
+@keyframes softGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 6px rgba(59,130,246,0.35),
+      0 0 12px rgba(59,130,246,0.15);
+  }
+  50% {
+    text-shadow: 
+      0 0 14px rgba(59,130,246,0.6),
+      0 0 28px rgba(59,130,246,0.35);
+  }
+}
+
+.home-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.home-img {
+  border-radius: 50%;
+}
+
+
+.home-img img{
+  width: 22vw;       
+  min-width: 220px;  
+  border-radius: 50%;
+  box-shadow: var(--shadow-picture);
+}
+
+.home-btn a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 12px 80px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+    background: var(--primary);
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.home-btn a:hover {
+    background: var(--primary-hover);
+    box-shadow: var(--shadow-button);
+    transform: translateY(-3px);
+}
+
+/* About */
+.about {
+    margin-top: 14px;
+}
+
+.about-title {
+    font-size: 1.3rem;
+    text-align: center;
+    min-height: 80px;
+}
+
+.about-grid {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin: 110px 0;
+}
+
+.about-grid.reverse {
+  flex-direction: row-reverse;
+  margin-top: 220px;
+  margin-bottom: 220px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 18px;
+  box-shadow: var(--shadow-picture);
+}
+
+.about-content {
+  max-width: 480px;
+}
+
+.about-content h1 {
+  font-size: 42px;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.about-content p {
+  font-size: 1.15rem;
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+/* Project */
+.project {
+  padding-top: 120px;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  text-align: center;
+  min-height: 80px;
+}
+
+.project-title p {
+  color: var(--text-secondary);
+  margin-top: 10px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 420px));
+  justify-content: center;
+  gap: 30px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.project-card {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: 0.35s ease;
+  color: var(--text-main);
+  
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-accent);
+}
+
+.project-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 28px;
+}
+
+.project-content h3 {
+  padding: 10px 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.project-content p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Contact */
+.contact {
+  padding: 6rem 9%;
+}
+
+.contact-title {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.contact-title h1 {
+  font-size: 3.2rem;
+  color: var(--primary);
+}
+
+.contact-title p {
+  color: var(--text-secondary);
+  margin-top: 10px;
+}
+
+.contact-form {
+  max-width: 950px;
+  margin: auto;
+  background: var(--bg-secondary);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 18px 20px;
+  border-radius: 10px;
+  color: var(--text-main);
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 200px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  background: var(--primary);
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--primary-hover);
+  box-shadow: var(--shadow-button);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  margin-top: 120px;
+  padding: 25px 0;
+  text-align: center;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* garis tipis */
+}
+
+.footer p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
